@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+  <h2>{{state}}'s temperature in {{date}} will be {{prediction}} degrees Fahrenheit.</h2>
+  <p>The increase of temperature in {{state}} between 1900 and 1970 was {{diff1}} degrees Fahrenheit.</p>
+  <br>
+  <p>The increase of temperature in {{state}} between 1970 and today is {{diff2}} degrees Fahrenheit.</p>
+  <br>
+  <p>The increase of temperature in {{state}} between today and {{date}} will be {{diff4}} degrees Fahrenheit.</p>
+{% endblock header %}

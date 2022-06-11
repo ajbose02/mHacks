@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+
+<!---phone toggle menu--->
+
+
+<!----index---->
+
+  <section class="blank">
+    <h1 class="newh1" >A BLAZING FUTURE</h1>
+      <hr class="breakLine">
+      <h1>Our Mission</h1>
+      <p>Our Mission is to raise awareness of how the rate of global temperatures rising have been rapidly increasing because of a lack of effort to combat climate change.</p>
+      <!-- <div class="row">
+          <div class="blank-col">
+              <h3>Live Race</h3>
+              <p>abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde </p>
+          </div>
+          <div class="blank-col">
+              <h3>Virtual Race</h3>
+              <p>abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde abcde </p>
+          </div>
+      </div> -->
+  </section>
+</body>
+<head style = "background-color: #dcedc9;">
+  </head>
+<h1>State Temperature Predictor</h1>
+  <form>
+    <label for="fname">State:</label><br>
+    <input type="string" id="state"><br>
+  </form>
+  <br>
+
+  <form>
+    <label for="fname">Year: (yyyy-dd-mm) </label><br>
+    <input type="string" id="date"><br>
+  </form>
+  <br>
+
+  <button name="submit" id = "btn" onclick="redirect()">Submit</button>
+  <script>
+    function redirect(){
+
+      var st = document.getElementById("state").value;
+      var dt = parseInt(document.getElementById("date").value.replaceAll("-",""));
+
+      var url = "/prediction/"+ st +"/"+ dt+"/";
+
+      window.open(url)
+
+
+
+      // Append the text node to anchor element.
+      //a.appendChild(link);
+
+      // Set the title.
+      //a.title = "This is Link";
+
+      // Set the href property.
+      //a.href = "/prediction/"+data[0]+"/"+data[1]+"/"+data[2]+"/"+data[3]+"/"+data[4]+"/"+data[5]+"/"+data[6]+"/"+data[7]+"/"+data[8]+"/"+data[9]+"/"+data[10]+"/"+data[11]+"/"+data[12]+"/"+data[13]+"/"+data[14]+"/"+data[15]+"/"+data[16]+"/";
+
+      // Append the anchor element to the body.
+      //document.body.appendChild(a);
+
+    }
+  </script>
+
+
+  <h2>{{prediction}}</h2>
+
+{% endblock header %}
